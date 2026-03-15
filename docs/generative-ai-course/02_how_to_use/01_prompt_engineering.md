@@ -30,7 +30,7 @@
 LLMは大量の Markdown 形式のテキスト（GitHub、Qiita、Stack Overflow 等）で学習しているため、
 Markdown の構造を理解して処理できます。
 
-> 📚 参考: [YC: Best prompts use Markdown](https://www.reddit.com/r/LLMDevs/comments/1ljdul6/yc_says_the_best_prompts_use_markdown/)
+> 📚 参考: [Anthropic: Use XML tags to structure your prompt](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags)
 
 ---
 
@@ -212,21 +212,22 @@ ChatGPT (o1/o3), Claude 3.7, Gemini 2.5 Pro などの「推論モデル」は、
 
 ```markdown
 # 高度なプロンプト例
-<role>
+<SCRATCHPAD>
+まず、要約のポイントを3点洗い出し、対象者が興味を持ちそうな具体例を1つ選定する。
+</SCRATCHPAD>
+
+<CONTEXT>
 あなたはプロのテクニカルライターです。
-</role>
+ターゲット：ITに詳しくない20代の若手社員。
+</CONTEXT>
 
-<task>
-以下の <source_text> を、<target_audience> に合わせて要約してください。
-</task>
+<TASK>
+以下の <SOURCE_TEXT> を、200字程度で要約してください。
+</TASK>
 
-<target_audience>
-ITに詳しくない20代の若手社員
-</target_audience>
-
-<source_text>
+<SOURCE_TEXT>
 [ここに長い文章を貼り付け]
-</source_text>
+</SOURCE_TEXT>
 ```
 
 ---

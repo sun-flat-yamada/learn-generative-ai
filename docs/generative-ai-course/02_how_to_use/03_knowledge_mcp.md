@@ -40,6 +40,10 @@ Copilot ─┘         ├── Slack MCPサーバー
                     ├── 社内DBカスタムMCPサーバー
                     └── Enterprise Vector Search
 → 一度実装したMCPサーバーはどのAIでも再利用可能（標準化）
+
+> [!NOTE]
+> **2026年の進化: MCP 2.0**
+> 2025年後半にリリースされた MCP 2.0 では、巨大なバイナリデータの効率的なストリーミング転送や、AIエージェント間での「コンテキストのバトンパス（Agent-to-Agent Handshake）」が標準化されました。これにより、個別の専門MCPサーバーが協力して一つのタスクを解く「マルチエージェント・オーケストレーション」が極めて容易になっています。
 ```
 
 > 📚 参考:
@@ -91,7 +95,7 @@ AIが読み取れるデータ・ファイル
 
 Microsoft は、AI の「知識層（Intelligence Layer）」として **3つの IQ** を統合し、2026年には「Agent 365」や「Copilot Cowork」として実用化されています。
 
-```
+```txt
 Microsoft IQ 統合アーキテクチャ (2026)
 
 ┌─────────────────────────────────┐
@@ -290,7 +294,7 @@ Agent モードで MCP ツールを使う例:
 mkdir my-mcp-server
 cd my-mcp-server
 npm init -y
-npm install @modelcontextprotocol/sdk zod
+npm install @modelcontextprotocol/sdk@1.5.0 zod  # 2026年Q1時点の安定版
 npm install -D typescript @types/node ts-node
 ```
 
