@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "description": "GitHub公式MCPサーバー（リポジトリ・Issue・PR操作）"
+    },
+    "sales-data": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/src/workshops/github_copilot/mcp-sales-server/dist/index.js"
+      ],
+      "description": "ワークショップ用: 営業データ分析MCPサーバー"
+    }
+  }
+}

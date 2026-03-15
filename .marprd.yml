@@ -1,0 +1,4 @@
+# .marprc.yml
+theme: ./themes/learn-theme.css
+allow-local-files: true
+html: true

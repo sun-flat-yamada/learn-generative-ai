@@ -1,0 +1,233 @@
+/* [Role] スライドコンテンツの視覚的テーマ定義 */
+/* [Mechanism] CSSカスタムプロパティを用いたカラーシステム、タイポグラフィ、レイアウト構造の定義 */
+
+/* @theme learn-theme */
+@import "default";
+
+:root {
+  /* --- Color Palette --- */
+  --brand-green: #009a51; /* Green */
+  --text-primary: #222222; /* Dark gray for readability */
+  --text-secondary: #666666; /* Medium gray for subtext */
+  --text-muted: #999999; /* Light gray for footer/meta */
+  --bg-white: #ffffff; /* Fundamental background */
+  --bg-mint: #f0f7f2; /* Light mint for tables/accents */
+
+  /* Segment Accent Colors */
+  --healthcare-blue: #0067b1;
+  --electronics-magenta: #b4006b;
+  --innovation-orange: #e88300;
+
+  /* Typography */
+  --font-family:
+    "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  --base-font-size: 26px;
+}
+
+/* --- Base Section Settings --- */
+section {
+  width: 1280px;
+  height: 720px;
+  padding: 40px 60px;
+  font-family: var(--font-family);
+  font-size: var(--base-font-size);
+  color: var(--text-primary);
+  background-color: var(--bg-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Default: Top aligned */
+  line-height: 1.6;
+}
+
+/* --- Header Decor: Top Green Bar --- */
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--brand-green);
+}
+
+/* --- Typography Styles --- */
+h1 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--text-primary);
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+h1::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 1em;
+  background-color: var(--brand-green);
+  margin-right: 15px;
+}
+
+/* --- Content Slide Header (Section Title) --- */
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--brand-green); /* Header Line */
+  width: 100%;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--text-secondary);
+}
+
+/* --- Lists --- */
+ul,
+ol {
+  margin-left: 1.2em;
+  margin-top: 10px;
+}
+
+li {
+  margin-bottom: 0.6em;
+}
+
+ul > li::marker {
+  color: var(--brand-green);
+  content: "■ "; /* Rectangular bullet style common */
+  font-size: 0.8em;
+}
+
+/* --- Emphasis --- */
+strong {
+  color: var(--text-primary);
+  font-weight: bold;
+  border-bottom: 3px solid var(--brand-green); /* Green underline emphasis */
+}
+
+em {
+  color: var(--brand-green);
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* --- Tables --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background-color: var(--brand-green);
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 0.9em;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+tr:nth-child(even) {
+  background-color: var(--bg-mint);
+}
+
+/* --- Header: Slide title --- */
+header {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  top: unset;
+
+  left: 0;
+  text-align: center;
+
+  font-size: 60%;
+  color: var(--text-muted);
+}
+
+/* --- Footer: Page numbering --- */
+footer {
+  position: absolute;
+  bottom: 30px;
+  right: 60px;
+
+  font-size: 60%;
+  color: var(--text-muted);
+}
+
+/* --- Special Slide: Title (Lead) --- */
+/* [Mechanism] :has() selector automatically detects slides with H1 but no H2 as title/divider slides */
+section:has(h1):not(:has(h2)):not(.recap),
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Left-aligned content in center of page */
+  text-align: left;
+  background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+}
+
+section:has(h1):not(:has(h2)):not(.recap) h1,
+section.lead h1 {
+  border: none;
+  font-size: 2.8em;
+  margin-bottom: 0.2em;
+  color: var(--brand-green);
+}
+
+section:has(h1):not(:has(h2)):not(.recap) h1::before,
+section.lead h1::before {
+  display: none;
+}
+
+section:has(h1):not(:has(h2)):not(.recap) h1::after,
+section.lead h1::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 6px;
+  background: var(--brand-green);
+  margin-top: 20px;
+}
+
+section:has(h1):not(:has(h2)):not(.recap) h2,
+section.lead h2 {
+  color: var(--text-secondary);
+  font-size: 1.4em;
+  margin-top: 0;
+  border-bottom: none; /* Override content slide header border */
+  padding-bottom: 0;
+}
+
+/* --- Section Divider (Inverted) --- */
+section.recap {
+  background-color: var(--brand-green);
+  color: #ffffff;
+}
+
+section.recap h1,
+section.recap h2 {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+section.recap h1::before {
+  background-color: #ffffff;
+}
+
+section.recap footer {
+  color: rgba(255, 255, 255, 0.7);
+}
