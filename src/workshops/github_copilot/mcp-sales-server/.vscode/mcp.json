@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "sales-data": {
+      "command": "node",
+      "args": [
+        "dist/index.js"
+      ],
+      "env": {},
+      "disabled": false
+    }
+  }
+}

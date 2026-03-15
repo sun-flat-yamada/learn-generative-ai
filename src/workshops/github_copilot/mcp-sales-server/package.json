@@ -1,0 +1,18 @@
+{
+  "name": "mcp-sales-server",
+  "version": "1.0.0",
+  "description": "Sales data analysis MCP server for GitHub Copilot workshop",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.0"
+  }
+}

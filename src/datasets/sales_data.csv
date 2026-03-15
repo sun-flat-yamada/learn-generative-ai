@@ -1,0 +1,15 @@
+date,product,category,sales,units,region
+2026-01-05,Laptop Pro 14,Computers,1500000,10,East
+2026-01-12,Monitor 4K 27,Accessories,350000,7,West
+2026-01-15,Keyboard Mechanic,Accessories,120000,12,East
+2026-01-20,Laptop Air 13,Computers,1200000,15,South
+2026-01-25,Wireless Mouse,Accessories,50000,20,North
+2026-02-02,Laptop Pro 14,Computers,2250000,15,West
+2026-02-08,Monitor 4K 27,Accessories,300000,6,East
+2026-02-14,Laptop Air 13,Computers,960000,12,East
+2026-02-18,Keyboard Mechanic,Accessories,150000,15,West
+2026-02-22,Wireless Mouse,Accessories,62500,25,South
+2026-02-27,Office Suite v1,Software,500000,50,North
+2026-03-01,Laptop Pro 14,Computers,3000000,20,East
+2026-03-05,Monitor 4K 27,Accessories,450000,9,West
+2026-03-10,Laptop Air 13,Computers,1600000,20,North
